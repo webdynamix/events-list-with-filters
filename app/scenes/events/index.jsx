@@ -29,10 +29,13 @@ class Main extends Component {
   }
 
   render() {
+
     return (
       <div>
         <h1>{this.props.title}</h1>
-        <Filters data={this.props.eventsData} onChangeHandler={this.onFilterChange} />
+        { !!this.props.eventsData && this.props.eventsData.length > 0 &&
+          <Filters data={this.props.eventsData} onChangeHandler={this.onFilterChange} />
+        }
         <EventList list={this.state.events} />
       </div>
     );

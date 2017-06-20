@@ -26,15 +26,14 @@ export function failure(response) {
     value: response,
   };
 }
-//
-export function fetchEventData(callback) {
+
+export function fetchEventData() {
   const uri = 'https://raw.githubusercontent.com/webdynamix/events-list-with-filters/master/data/events.json';
   return (dispatch) => {
     dispatch(sendRequest());
     fetch.get(uri).then((response) => {
       if (response.status === 200) {
         dispatch(success(response.payload));
-        callback(response.payload);
       } else {
         dispatch(failure(response));
       }

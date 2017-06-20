@@ -28,6 +28,7 @@ class Filters extends Component {
         options: dedupe(opts),
       });
     });
+
     this.setState({ selectBoxes });
   }
 
