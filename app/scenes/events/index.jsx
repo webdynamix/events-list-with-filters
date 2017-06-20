@@ -18,6 +18,10 @@ class Main extends Component {
     this.onFilterChange = this.onFilterChange.bind(this);
   }
 
+  componentWillMount() {
+    this.props.actions.fetchEventData();
+  }
+
   onFilterChange(events) {
     if (JSON.stringify(events) !== JSON.stringify(this.state.events)) {
       this.setState({ events });

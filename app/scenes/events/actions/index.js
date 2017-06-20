@@ -27,8 +27,8 @@ export function failure(response) {
   };
 }
 //
-export function fetchAction(callback) {
-  const uri = 'https://raw.githubusercontent.com/wearebond/frontend-coding-challenge/master/data/movie_metadata.json';
+export function fetchEventData(callback) {
+  const uri = 'https://raw.githubusercontent.com/webdynamix/events-list-with-filters/master/data/events.json';
   return (dispatch) => {
     dispatch(sendRequest());
     fetch.get(uri).then((response) => {

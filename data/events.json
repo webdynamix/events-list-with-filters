@@ -9,7 +9,7 @@
     "time": "9:00 AM - 1:00 PM",
     "status": "Closed",
     "room": "Sea of Tranquility",
-    "registrants": "68",
+    "registrants": "68"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "time": "9:00 AM - 1:00 PM",
     "status": "Open",
     "room": "C201 (Parker CMC)",
-    "registrants": "50",
+    "registrants": "50"
   },
   {
     "id": "3",
@@ -33,7 +33,7 @@
     "time": "9:00 AM - 1:00 PM",
     "status": "Open",
     "room": "Executive Room(B2)",
-    "registrants": "8",
+    "registrants": "8"
   },
   {
     "id": "4",
@@ -45,7 +45,7 @@
     "time": "9:00 AM - 1:00 PM",
     "status": "Closed",
     "room": "C201 (Parker CMC)",
-    "registrants": "20",
+    "registrants": "20"
   },
   {
     "id": "5",
@@ -57,7 +57,7 @@
     "time": "9:00 AM - 1:00 PM",
     "status": "Open",
     "room": "Executive Room(B2)",
-    "registrants": "18",
+    "registrants": "18"
   },
   {
     "id": "6",
@@ -69,6 +69,6 @@
     "time": "9:00 AM - 1:00 PM",
     "status": "Open",
     "room": "Executive C101",
-    "registrants": "0",
+    "registrants": "0"
   }
 ]
