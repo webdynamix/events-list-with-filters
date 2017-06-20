@@ -9,6 +9,6 @@ I have included the dist/ package in this repo if you would like to skip setup. 
 4. Run `./node_modules/.bin/webpack --config webpack.js --watch`
 
 ## Screenshots
-<img src="/assets/screenshots/1.png" width="420" align="left" />
+<img src="/assets/screenshots/1.png" align="left" />
 <img src="/assets/screenshots/2.png" width="420" align="left" />
 <img src="/assets/screenshots/3.png" width="420" align="left" />
