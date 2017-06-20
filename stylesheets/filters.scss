@@ -7,7 +7,6 @@
       a.clear {
         @include badge;
         margin-left: $gutter;
-        margin-right: $gutter;
         &:after {
           content: 'x';
           display: inline-block;
@@ -29,8 +28,13 @@
   }
   @include desktop {
     > ul {
-      > li:last-child {
-        display: inline-block;
+      > li {
+        a.clear {
+          margin-right: $gutter;
+        }
+        &:last-child {
+          display: inline-block;
+        }
       }
     }
   }
