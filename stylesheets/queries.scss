@@ -1,0 +1,22 @@
+/*
+  No defenition for mobile because I'm taking a mobile first approach
+  # !!!could potentially bloat the code at scale by overuse.
+*/
+
+@mixin tablet {
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin wideScreen {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}

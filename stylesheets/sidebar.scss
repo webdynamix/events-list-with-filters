@@ -1,0 +1,46 @@
+aside[data-component='sidebar'] {
+  @include column();
+  z-index: 9;
+  left: -100%;
+  transition: left 0.5s ease;
+  position: absolute;
+  height: calc(100% - #{$headerHeight});
+  width: $sidebarWidth;
+  background-color: $dark;
+  ul {
+    margin: $gutter 0;
+    > li {
+      > a {
+        color: $white;
+        padding: 10px;
+        display: block;
+        &:hover {
+          background: $sidebarMenuHover;
+        }
+      }
+      &.active > a {
+        font-weight: 600;
+        color: $gold;
+        background: $sidebarMenuActive;
+      }
+    }
+  }
+  &[data-visible="true"] {
+    left: 0;
+  }
+}
+
+i.toggleSidebar {
+  float: left;
+  margin: 7px 11px 0 7px;
+  @include icon($menu);
+}
+
+@include desktop {
+  aside[data-component='sidebar'] {
+    left: 0;
+  }
+  i.toggleSidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,44 @@
+header {
+  height: $headerHeight;
+  background: $white;
+  border-bottom: 1px solid $bordercolor;
+  > h2 {
+    display: none;
+    line-height: 3rem;
+    margin: 0 0 0 $gutter;
+  }
+  > nav {
+    float: right;
+    > button {
+      color: $graytext;
+      @include ghostButton;
+      padding: 13px 15px;
+      > i {
+        &.bulb {
+          @include icon($bulb);
+        }
+        &.bug {
+          @include icon($bug);
+        }
+        &.cog {
+          @include icon($cog);
+        }
+        font-size: 1.45rem !important;
+      }
+      &:hover {
+        background: $lightestgray;
+      }
+      &.active {
+        color: $gold;
+      }
+    }
+  }
+  @include desktop {
+    h2 {
+      display: block;
+    }
+    > nav {
+      margin-right: $gutter;
+    }
+  };
+}

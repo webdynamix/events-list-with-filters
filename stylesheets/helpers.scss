@@ -1,0 +1,159 @@
+
+
+@mixin column {
+  float: left;
+}
+
+@mixin shift($unit) {
+  margin-left: calc(#{$unit} - 0px);
+}
+
+@mixin clearList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin ghostButton {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  outline-width: 0;
+}
+
+// I created a custom helper that iterates through values in $columns and
+// generates pseudo selectors with column styles
+@mixin table($columns) {
+  border: 1px solid $bordercolor;
+  background-color: $white;
+  > * {
+    @each $column in $columns {
+      $i: index($columns, $column);
+      > :nth-child(#{$i}) {
+        @include grid-column($column, $table-grid);
+        @if $column == 0 {
+          display: none;
+        }
+      }
+    }
+    @include grid-container;
+    padding: 10px 0;
+    border-bottom: 1px solid $bordercolor;
+    &:nth-child(even) {
+      background: $lightestgray;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+    &[data-type="tableheading"] {
+      color: $white;
+      background: $dark;
+      padding: 2px 0;
+      > div {
+        line-height: 2rem;
+        &[data-component="checkbox"] {
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}
+
+@mixin tableAlter($columns) {
+  > * {
+    @each $column in $columns {
+      $i: index($columns, $column);
+      > :nth-child(#{$i}) {
+        display: block;
+        @include grid-column($column, $table-grid);
+      }
+    }
+  }
+}
+
+@mixin clearfix {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@mixin flushGutter {
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+// custom children selector
+@mixin children($list) {
+  @each $child in $list {
+    > :nth-child(#{$child}) {
+      @content;
+    }
+  }
+}
+
+@mixin child($child) {
+  > :nth-child(#{$child}) {
+    @content;
+  }
+}
+
+@mixin badge {
+  color: $graytext;
+  background: $lightgray;
+  font-size: .65rem;
+  text-align: center;
+  display: inline-block;
+  padding: .3833em .9833em;
+  border-radius: .58571429rem;
+  &.active {
+    color: $white;
+    background: $green;
+  }
+}
+
+@mixin selectbox {
+  position: relative;
+  margin: 5px 7px 0 0;
+  > label {
+    text-transform: capitalize;
+  }
+  > i {
+    border: solid $graytext;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    position: absolute;
+    bottom: 11px;
+    right: 10px;
+    pointer-events:none;
+  }
+  > select {
+    margin: 5px 0 0;
+    color: $graytext;
+    border: solid 1px $bordercolor;
+    padding-left: 3px;
+    border-radius: 0px;
+    font-size: 12px;
+    width: 100%;
+    height: 28px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+}
+
+@mixin icon_content ($code) {
+  content: $code;
+  font-family: "fontello";
+  display: inline-block;
+  font-style: normal;
+}
+
+@mixin icon ($code) {
+  font-size: 2rem;
+  &:before {
+    @include icon_content($code);
+  }
+}

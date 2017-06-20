@@ -1,0 +1,27 @@
+ul[data-component="eventslist"] {
+  @include flushGutter;
+  @include table(1 5.5 3 2.5 0);
+  > li {
+    @include children(1 4 5) {
+      text-align: center;
+    }
+    &:not([data-type="tableheading"]) {
+      @include children(3 5) {
+        line-height: 1.855rem;
+      }
+    }
+    &.noResults {
+      text-align: center;
+    }
+  }
+  [data-type="badge"] {
+    margin: 3px 0 0;
+    @include badge;
+  }
+  @include desktop {
+    @include tableAlter(.6 4.9 3 2 1.5);
+    [data-type="badge"] {
+      width: 80px;
+    }
+  }
+}

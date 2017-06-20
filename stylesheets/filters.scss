@@ -1,0 +1,37 @@
+#filters {
+  padding: $gutter;
+  > ul {
+    > li {
+      display: inline-block;
+      @include selectbox;
+      a.clear {
+        @include badge;
+        margin-left: $gutter;
+        margin-right: $gutter;
+        &:after {
+          content: 'x';
+          display: inline-block;
+          margin: 0 0 0 5px;
+        }
+        &:hover {
+          color: $white;
+          background: $gold;
+        }
+      }
+      &:last-child {
+        display: block;
+        margin: $gutter 0 0;
+      }
+    }
+    &:after {
+      @include clearfix;
+    }
+  }
+  @include desktop {
+    > ul {
+      > li:last-child {
+        display: inline-block;
+      }
+    }
+  }
+}

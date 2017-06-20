@@ -1,0 +1,51 @@
+@import "bourbon";
+@import "neat";
+@import "fonts";
+@import "constants";
+@import "helpers";
+@import "header";
+@import "sidebar";
+@import "filters";
+@import "scenes/events";
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: $fontsize;
+  font-weight: 400;
+  margin: 0;
+  background-color: #EFF0F1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  @include clearList;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#app {
+  @include grid-container;
+}
+
+main {
+  a {
+    color: $gold;
+  }
+  padding: 0 $gutter;
+  section {
+    background: $white;
+    margin-bottom: $gutter;
+    border: 1px solid $bordercolor;
+    @include flushGutter;
+  }
+  @include desktop {
+    padding: $gutter ($gutter*2);
+    @include shift($sidebarWidth);
+  }
+}
