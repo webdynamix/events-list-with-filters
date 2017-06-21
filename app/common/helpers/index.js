@@ -1,7 +1,7 @@
-
+ /* eslint import/prefer-default-export: 0 */
 export const dedupe = (ar) => {
-  const cleanlist = ar.filter((item, index, arr) => {
+  const deduped = ar.filter((item, index, arr) => {
     return arr.indexOf(item) === index;
   });
-  return cleanlist;
+  return deduped;
 };

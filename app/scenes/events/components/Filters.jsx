@@ -33,6 +33,7 @@ class Filters extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    // console.log('nextState', nextState);
     this.props.onChangeHandler(this.resultsUpdate(nextState));
     return true;
   }
@@ -42,7 +43,7 @@ class Filters extends Component {
 
     this.filters.forEach((filterBy) => {
       const filterValue = state[filterBy];
-      if (filterValue) {
+      if (!!filterValue) {
         filteredItems = filteredItems.filter((item) => {
           return item[filterBy] === filterValue;
         });
