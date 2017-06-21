@@ -60,10 +60,10 @@ module.exports = {
     }),
     // Uglify should only be done on production
     // disable for debugging
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false,
+    //   },
+    // }),
   ],
 };
