@@ -34,7 +34,7 @@ module.exports = {
       {
         // configuring file/font loader if needed
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=dist/fonts/[name].[ext]',
+        loader: 'file-loader?name=fonts/[name].[ext]',
       },
       {
         // configuring sass / scss loader
@@ -46,7 +46,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       // Shrinking my bundle with react-lite
-      // disable if using react-dev-tool
+      // disable if using react-dev-tool / debugging
       react: 'react-lite',
       'react-dom': 'react-lite',
       // common path alias for project imports
