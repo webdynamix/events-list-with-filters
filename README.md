@@ -1,6 +1,6 @@
 # events-list-with-filters
 
-Single page app with an events list and functional filers. Note: This is only a sample app with a single view. Navigation links are not functional and are for presentation only.
+Single page app with an events list and functional filters. Note: This is only a sample app with a single view. Navigation links are not functional and are for presentation only.
 I have included the dist/ bundle in this repo if you would like to skip setup. Just open `index.html`
 
 
